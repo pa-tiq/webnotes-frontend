@@ -1,16 +1,20 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
+import { FeedContext } from '../store/feed-context';
 
 const StyledTextArea = styled.textarea`
-  width:100%;
-`
+  width: 100%;
+`;
 
 const TextArea = (props) => {
-  const [text,setText] = useState(props.text);
+  const feedContext = useContext(FeedContext);
+  const [text, setText] = useState(feedContext.feed);
 
-  return (
-    <StyledTextArea value={text}/>
-  )
-}
+  const changeTextHandler = () => {
+    
+  }
+
+  return <StyledTextArea value={text} onChange={changeTextHandler} />;
+};
 
 export default TextArea;

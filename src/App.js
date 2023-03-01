@@ -1,12 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { useContext } from 'react';
-import { FeedContext } from './store/feed-context';
 import TextArea from './components/TextArea'
 
 function App() {
-
-  const feedContext = useContext(FeedContext);
 
   return (
     <div className="App">
@@ -24,7 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <TextArea text={feedContext.feed}/>
+      <TextArea/>
     </div>
   );
 }

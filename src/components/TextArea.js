@@ -12,3 +12,5 @@ const TextArea = (props) => {
     <StyledTextArea value={text}/>
   )
 }
+
+export default TextArea;

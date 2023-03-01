@@ -7,7 +7,6 @@ import TextArea from './components/TextArea'
 function App() {
 
   const feedContext = useContext(FeedContext);
-  feedContext.getFeed();
 
   return (
     <div className="App">

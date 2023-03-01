@@ -1,10 +1,10 @@
-import { createContext } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { URLs } from '../constants/URLs';
 import useHttp from '../hooks/use-http';
 import openSocket from 'socket.io-client';
 
 export const FeedContext = createContext({
-  feed: [],
+  feed: '',
   isLoading: false,
   error: null,
   getFeed: async () => {},
@@ -12,7 +12,15 @@ export const FeedContext = createContext({
 });
 
 const FeedContextProvider = (props) => {
+  const [feed, setFeed] = useState('');
   const httpObj = useHttp();
+
+  useEffect(()=>{
+    openSocket('http://localhost:8080');
+    return function cleanup(){
+
+    }
+  });
 
   const getFeed = async () => {
     const getConfig = {

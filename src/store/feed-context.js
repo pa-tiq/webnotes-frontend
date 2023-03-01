@@ -29,7 +29,6 @@ const FeedContextProvider = (props) => {
     };
     const createTask = (response) => {
       console.log(response);
-      openSocket('http://localhost:8080');
     };
     await httpObj.sendRequest(getConfig, createTask);
     if (httpObj.error) {
